@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Votação Grêmio Estudantil</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- Login -->
+<div id="login-container" class="login-container">
+    <div class="login-card">
+        <img src="logo-ayrton-tom.png" alt="Usuário" class="login-img">
+        <h2>Login - Sistema de Votação</h2>
+        <input type="text" id="username" value="COMPUTADOR 3" readonly>
+        <input type="password" id="password" placeholder="Digite sua senha">
+        <button onclick="login()">Entrar</button>
+        <p id="login-error" class="erro-msg"></p>
+    </div>
+    <p>O Sistema de Votação foi feita pelo 3°S e o professor Tarek</p>
+</div>
+
+<!-- Votação -->
+<div id="voto-container" class="voto-container" style="display:none;">
+    <h2>Escolha sua Chapa</h2>
+    <div class="chapas">
+        <div class="chapa-card" onclick="confirmVote('NOVA UNIÃO')">
+            <img src="nova_uniao.png" alt="NOVA UNIÃO">
+            <h3>NOVA UNIÃO</h3>
+        </div>
+        <div class="chapa-card" onclick="confirmVote('CHAPA MÁXIMA')">
+            <img src="chapa_maxima.jpg" alt="CHAPA MÁXIMA">
+            <h3>CHAPA MÁXIMA</h3>
+        </div>
+        <div class="chapa-card" onclick="confirmVote('VOZ ATIVA')">
+            <img src="voz_ativa.jpg" alt="VOZ ATIVA">
+            <h3>VOZ ATIVA</h3>
+        </div>
+        <div class="chapa-card" onclick="confirmVote('FÚRIA EM PISTA')">
+            <img src="furia_em_pista.jpg" alt="FÚRIA EM PISTA">
+            <h3>FÚRIA EM PISTA</h3>
+        </div>
+        <div class="chapa-card" onclick="confirmVote('Nulo')">
+            <img src="nulo.jpg" alt="Voto Nulo">
+            <h3>Voto Nulo</h3>
+            <p>"Prefiro não escolher nenhuma chapa."</p>
+        </div>
+    </div>
+</div>
+
+<!-- Resultados ADM -->
+<div id="resultado-container" class="resultado-container" style="display:none;">
+    <h2>Resultados da Votação</h2>
+    <canvas id="chart"></canvas>
+    <table id="tabela-resultados"></table>
+    <button onclick="limparVotos()" class="btn-red">Limpar Votos</button>
+    <button onclick="limparSenhasUsadas()" class="btn-red">Limpar Senhas Usadas</button>
+    <button onclick="toggleSenhas()">Ver Senhas</button>
+    <div id="senhas-section" style="display:none">
+        <div id="senhas-div"></div>
+    </div>
+</div>
+
+<script src="script_pc3.js"></script>
+</body>
+</html>
