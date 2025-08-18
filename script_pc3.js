@@ -554,6 +554,12 @@ function confirmVote(chapa){
       document.getElementById("login-error").textContent="";
     },500);
   }
+  tocarSom();
+}
+function tocarSom() {
+  const audio = document.getElementById("som");
+  audio.currentTime = 0; // Reinicia o áudio se já estiver tocando
+  audio.play();
 }
 
 // ======== Resultados ========
@@ -665,3 +671,4 @@ function renderPasswords(){
   table.appendChild(tbody);
   div.appendChild(table);
 }
+
